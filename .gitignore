@@ -4,3 +4,7 @@ node_modules
 package-lock.json
 dist
 public
+src/components/*.html
+src/templates/*
+extract_body.py
+scripts/

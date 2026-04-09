@@ -14,18 +14,17 @@ Untuk kamu yang ingin melihat demo terlebih dahulu:
 
 ## 📦 Documentation
 
-* Jalankan perintah `npm install`, lalu `npm run dev`, dan buka `http://localhost:8080`.
-* Ubah isi file `index.html` sesuai keinginanmu.
+* Jalankan perintah `npm install`, lalu `npm run dev`, dan buka `http://localhost:5173`.
+* Edit markup in the Vue components under `src/components/` (`InvitationRoot.vue`, `WelcomeScreen.vue`, `LoadingPage.vue`, `ButtonGroup.vue`, `ModalImage.vue`) and adjust `src/main.js`/`src/App.vue` when needed.
 * Jika tidak ingin menggunakan **fitur komentar**, hapus atribut `data-url` dan `data-key` di elemen `<body>` pada index.html.
 * Sesuaikan `data-url` pada `<body>` di index dan dashboard sesuai dengan URL backend (jika kamu meng-hosting sendiri).
 * Sesuaikan juga `data-key` di index dengan access key yang bisa kamu ambil dari dashboard.
 * Jika ingin menggunakan GIF, dapatkan Tenor API key di [developers.google.com/tenor](https://developers.google.com/tenor/guides/quickstart).
-* Untuk deployment, jalankan `npm run build:public`. Folder `public` adalah yang akan kamu upload.
+* Untuk deployment, jalankan `npm run build`. Folder `dist` adalah yang akan kamu upload.
 * Untuk backend self-hosting, lihat penjelasan di bawah, atau gunakan **trial API** secara gratis.
 
-> Undangan ini hanya menggunakan HTML, CSS, dan JavaScript biasa. NPM digunakan agar file JavaScript bisa langsung dieksekusi (bukan bertipe module lagi).
-
-> Jika tetap ingin tanpa NPM, ubah `src="./dist/guest.js"` menjadi `src="./js/guest.js" type="module"` pada tag `<head>` di index dan dashboard.html, dengan risiko glitch tema di awal loading.
+> Undangan kini dibungkus dengan Vue + Vite agar markup lama bisa disajikan kembali bersama logika modern; NPM diperlukan untuk menyajikan bundle yang sudah diproses.
+> Jika tetap ingin tanpa bundler, kamu harus menyusun ulang halaman secara manual dengan meniru struktur dari komponen-komponen di `src/components/` dan memuat modul JavaScript yang dibutuhkan tanpa Vite.
 
 > Jika kamu punya pertanyaan, gunakan fitur `discussions` agar bisa dibaca juga oleh teman-teman lainnya.
 
