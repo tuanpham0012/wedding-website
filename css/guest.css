@@ -167,13 +167,13 @@ svg {
 
 .invite-to {
     margin: 0 0 1.05rem 0;
-    font-size: 1.15rem;
+    font-size: 1rem;
     color: #222;
 }
 
 .invite-name {
     margin: 0;
-    font-size: 1.28rem;
+    font-size: 1.35rem;
     text-decoration-line: underline;
     text-decoration-style: dotted;
     padding-bottom: 0.55rem;

@@ -20,7 +20,7 @@
                   data-src="https://picsum.photos/1000/1000?random=7"
                   alt="bg"
                   class="bg-cover-home"
-                  style="mask-image: none; opacity: 30%"
+                  style="mask-image: none; opacity: 90%"
                 />
               </div>
               <div
@@ -32,7 +32,7 @@
                   data-src="https://picsum.photos/1000/1000?random=8"
                   alt="bg"
                   class="bg-cover-home"
-                  style="mask-image: none; opacity: 30%"
+                  style="mask-image: none; opacity: 90%"
                 />
               </div>
               <div
@@ -44,7 +44,7 @@
                   data-src="https://picsum.photos/1000/1000?random=9"
                   alt="bg"
                   class="bg-cover-home"
-                  style="mask-image: none; opacity: 30%"
+                  style="mask-image: none; opacity: 90%"
                 />
               </div>
             </div>
@@ -91,7 +91,7 @@
                 class="font-esthetic pt-5 pb-4 fw-medium"
                 style="font-size: 2.25rem"
               >
-                Thiệp cưới
+                Save The Date
               </h1>
 
               <img
@@ -107,6 +107,7 @@
               </h2>
               <p class="my-2" style="font-size: 1.25rem">Thứ Bảy, 02 Thắng 05 năm 2026</p>
 
+              <InvitationCard class="mt-5 mb-5" :show-date="false"/>
               <button
                 class="btn btn-outline-auto btn-sm shadow rounded-pill px-3 py-1"
                 style="font-size: 0.825rem"
@@ -148,12 +149,12 @@
 
           <!-- Bride -->
           <section class="bg-white-black text-center" id="bride">
-            <h2 class="font-arabic py-4 m-0" style="font-size: 2rem">
-              Nhân danh Thượng đế, Đấng nhân từ nhất, Đấng thương xót nhất
-            </h2>
-            <p class="pb-4 px-2 m-0" style="font-size: 0.95rem">
-              Với tất cả sự kính trọng, chúng tôi trân trọng mời quý vị đến tham dự lễ cưới của chúng tôi:
+            <p class="pb-4 px-2 m-0" style="font-size: 1rem">
+              TRÂN TRỌNG BÁO TIN LỄ THÀNH HÔN CỦA:
             </p>
+            <h2 class="font-esthetic my-4" style="font-size: 1.875rem">
+                Quóc Tuán &amp; Thu Hoài
+              </h2>
 
             <div class="overflow-x-hidden pb-4">
               <div class="position-relative">
@@ -296,44 +297,10 @@
           </div>
 
           <!-- Firman Allah Subhanahu Wa Ta'ala -->
-          <section class="bg-light-dark pt-2 pb-4">
-            <div class="container text-center">
-              <h2 class="font-esthetic pt-2 pb-1 m-0" style="font-size: 2rem">
-                Allah Subhanahu Wa Ta'ala berfirman
-              </h2>
-
-              <div
-                class="bg-theme-auto mt-4 p-3 shadow rounded-4"
-                data-aos="fade-down"
-                data-aos-duration="2000"
-              >
-                <p class="p-1 mb-2" style="font-size: 0.95rem">
-                  Dan segala sesuatu Kami ciptakan berpasang-pasangan agar kamu
-                  mengingat (kebesaran Allah).
-                </p>
-                <p class="m-0 p-0 text-theme-auto" style="font-size: 0.95rem">
-                  QS. Adh-Dhariyat: 49
-                </p>
-              </div>
-
-              <div
-                class="bg-theme-auto mt-4 p-3 shadow rounded-4"
-                data-aos="fade-down"
-                data-aos-duration="2000"
-              >
-                <p class="p-1 mb-2" style="font-size: 0.95rem">
-                  dan sesungguhnya Dialah yang menciptakan pasangan laki-laki
-                  dan perempuan,
-                </p>
-                <p class="m-0 p-0 text-theme-auto" style="font-size: 0.95rem">
-                  QS. An-Najm: 45
-                </p>
-              </div>
-            </div>
-          </section>
-
+          <!--      -->
+          
           <!-- Love Story -->
-          <section class="bg-light-dark pt-2 pb-4">
+          <!-- <section class="bg-light-dark pt-2 pb-4">
             <div class="container">
               <div class="bg-theme-auto rounded-5 shadow p-3">
                 <h2
@@ -342,9 +309,6 @@
                 >
                   Kisah Cinta
                 </h2>
-
-                <!-- Jika tidak ingin menggunakan video, hapus seluruh tag dengan id="video-love-story" di bawah ini. -->
-                <!-- If you don't want to use the video, remove the entire tag with id="video-love-story" below. -->
 
                 <div
                   id="video-love-stroy"
@@ -494,29 +458,17 @@
                 </div>
               </div>
             </div>
-          </section>
+          </section> -->
 
           <!-- Wave Separator -->
           <div class="svg-wrapper">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 1440 320"
-              class="color-theme-svg no-gap-bottom"
-            >
-              <path
-                fill="currentColor"
-                fill-opacity="1"
-                d="M0,96L30,106.7C60,117,120,139,180,154.7C240,171,300,181,360,186.7C420,192,480,192,540,181.3C600,171,660,149,720,154.7C780,160,840,192,900,208C960,224,1020,224,1080,208C1140,192,1200,160,1260,138.7C1320,117,1380,107,1410,101.3L1440,96L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
-              ></path>
-            </svg>
+            <WeddingCeremonyCard />
           </div>
 
           <!-- Wedding Date -->
           <section class="bg-white-black pb-2" id="wedding-date">
             <div class="container text-center">
-              <h2 class="font-esthetic py-4 m-0" style="font-size: 2.25rem">
-                Moment Bahagia
-              </h2>
+              <!-- <WeddingCeremonyCard /> -->
 
               <div class="border rounded-pill shadow py-2 px-4 mt-2 mb-4">
                 <div class="row justify-content-center">
@@ -564,8 +516,7 @@
               </div>
 
               <p class="py-2 m-0" style="font-size: 0.95rem">
-                Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala,
-                insyaAllah kami akan menyelenggarakan acara:
+                chúng tôi sẽ tổ chức các sự kiện sau đây vào ngày trọng đại của mình:
               </p>
 
               <!-- Love animation -->
@@ -588,23 +539,44 @@
                 </div>
               </div>
 
-              <div class="overflow-x-hidden">
+              <div class="overflow-hidden">
                 <div
-                  class="py-2"
-                  data-aos="fade-right"
+                  class="py-1"
+                  data-aos="fade-down"
                   data-aos-duration="1500"
                 >
                   <h2 class="font-esthetic m-0 py-2" style="font-size: 2rem">
-                    Akad
+                    10:30
                   </h2>
-                  <p style="font-size: 0.95rem">Pukul 10.00 WIB - Selesai</p>
+                  <p style="font-size: 0.95rem"> - Đón Khách Và Chụp Ảnh</p>
                 </div>
-
-                <div class="py-2" data-aos="fade-left" data-aos-duration="1500">
+                <div>
+                  |
+                </div>
+                <div class="py-1" data-aos="fade-left" data-aos-duration="1500">
                   <h2 class="font-esthetic m-0 py-2" style="font-size: 2rem">
-                    Resepsi
+                    11:15
                   </h2>
-                  <p style="font-size: 0.95rem">Pukul 13.00 WIB - Selesai</p>
+                  <p style="font-size: 0.95rem"> - Lễ Thành Hôn</p>
+
+                </div>
+                <div>
+                  |
+                </div>
+                <div class="py-1" data-aos="fade-right" data-aos-duration="1500">
+                  <h2 class="font-esthetic m-0 py-2" style="font-size: 2rem">
+                    11:30
+                  </h2>
+                  <p style="font-size: 0.95rem"> - Khai Tiệc Và Giao Lưu</p>
+                </div>
+                <div>
+                  |
+                </div>
+                <div class="py-1" data-aos="fade-up" data-aos-duration="1500">
+                  <h2 class="font-esthetic m-0 py-2" style="font-size: 2rem">
+                    13:00
+                  </h2>
+                  <p style="font-size: 0.95rem"> - Tung Hoa</p>
                 </div>
               </div>
 
@@ -1282,3 +1254,7 @@
       </div>
     </div>
 </template>
+<script setup>
+import InvitationCard from "./InvitationCard.vue";
+import WeddingCeremonyCard from "./WeddingCeremonyCard.vue";
+</script>
