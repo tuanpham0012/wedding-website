@@ -480,7 +480,7 @@
                     >
                       0
                     </p>
-                    <small class="ms-1 me-0 my-0 p-0 d-inline">Hari</small>
+                    <small class="ms-1 me-0 my-0 p-0 d-inline">Ngày</small>
                   </div>
                   <div class="col-3 p-1">
                     <p
@@ -490,7 +490,7 @@
                     >
                       0
                     </p>
-                    <small class="ms-1 me-0 my-0 p-0 d-inline">Jam</small>
+                    <small class="ms-1 me-0 my-0 p-0 d-inline">Giờ</small>
                   </div>
                   <div class="col-3 p-1">
                     <p
@@ -500,7 +500,7 @@
                     >
                       0
                     </p>
-                    <small class="ms-1 me-0 my-0 p-0 d-inline">Menit</small>
+                    <small class="ms-1 me-0 my-0 p-0 d-inline">Phút</small>
                   </div>
                   <div class="col-3 p-1">
                     <p
@@ -510,13 +510,13 @@
                     >
                       0
                     </p>
-                    <small class="ms-1 me-0 my-0 p-0 d-inline">Detik</small>
+                    <small class="ms-1 me-0 my-0 p-0 d-inline">Giây</small>
                   </div>
                 </div>
               </div>
 
               <p class="py-2 m-0" style="font-size: 0.95rem">
-                chúng tôi sẽ tổ chức các sự kiện sau đây vào ngày trọng đại của mình:
+                Chúng tôi sẽ tổ chức các sự kiện sau đây vào ngày trọng đại của mình:
               </p>
 
               <!-- Love animation -->
