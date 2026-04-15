@@ -3,63 +3,7 @@
 <!-- Root Invitation -->
     <div class="row m-0 p-0 opacity-0" id="root">
       <!-- Desktop mode -->
-      <div
-        class="sticky-top vh-100 d-none d-sm-block col-sm-5 col-md-6 col-lg-7 col-xl-8 col-xxl-9 overflow-y-hidden m-0 p-0"
-      >
-        <div
-          class="position-relative bg-white-black d-flex justify-content-center align-items-center vh-100"
-        >
-          <div class="d-flex position-absolute w-100 h-100">
-            <div class="position-relative overflow-hidden vw-100">
-              <div
-                class="position-absolute h-100 w-100 slide-desktop"
-                style="opacity: 0"
-              >
-                <img
-                  src="../../assets/images/placeholder.webp"
-                  data-src="https://picsum.photos/1000/1000?random=7"
-                  alt="bg"
-                  class="bg-cover-home"
-                  style="mask-image: none; opacity: 90%"
-                />
-              </div>
-              <div
-                class="position-absolute h-100 w-100 slide-desktop"
-                style="opacity: 0"
-              >
-                <img
-                  src="../../assets/images/placeholder.webp"
-                  data-src="https://picsum.photos/1000/1000?random=8"
-                  alt="bg"
-                  class="bg-cover-home"
-                  style="mask-image: none; opacity: 90%"
-                />
-              </div>
-              <div
-                class="position-absolute h-100 w-100 slide-desktop"
-                style="opacity: 0"
-              >
-                <img
-                  src="../../assets/images/placeholder.webp"
-                  data-src="https://picsum.photos/1000/1000?random=9"
-                  alt="bg"
-                  class="bg-cover-home"
-                  style="mask-image: none; opacity: 90%"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="text-center p-4 bg-overlay-auto rounded-5">
-            <h2 class="font-esthetic mb-4" style="font-size: 2rem">
-              Quốc Tuấn &amp; Thu Hoài
-            </h2>
-            <p class="m-0" style="font-size: 1rem">
-              Thứ Bảy, 02 Thắng 05 năm 2026
-            </p>
-          </div>
-        </div>
-      </div>
+      <DesktopScreen />
 
       <!-- Smartphone mode -->
       <div class="col-sm-7 col-md-6 col-lg-5 col-xl-4 col-xxl-3 m-0 p-0">
@@ -96,7 +40,7 @@
 
               <img
                 src="../../assets/images/placeholder.webp"
-                data-src="../../assets/images/bg.webp"
+                data-src="/assets/images/hoai-tuan/BTT_1952.webp"
                 alt="bg"
                 onclick="undangan.guest.modal(this)"
                 class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer"
@@ -107,7 +51,7 @@
               </h2>
               <p class="my-2" style="font-size: 1.25rem">Thứ Bảy, 02 Thắng 05 năm 2026</p>
 
-              <InvitationCard class="mt-5 mb-5" :show-date="false"/>
+              <InvitationCard class="mt-5 mb-5" :show-date="false" :show-btn-invitation="false"/>
               <button
                 class="btn btn-outline-auto btn-sm shadow rounded-pill px-3 py-1"
                 style="font-size: 0.825rem"
@@ -183,7 +127,7 @@
                 >
                   <img
                     src="../../assets/images/placeholder.webp"
-                    data-src="../../assets/images/cowo.webp"
+                    data-src="/assets/images/hoai-tuan/BTT_2213.webp"
                     alt="cowo"
                     onclick="undangan.guest.modal(this)"
                     class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer"
@@ -195,7 +139,6 @@
                   <p class="mb-0" style="font-size: 0.95rem">
                     Bố: Phạm Văn Thậm
                   </p>
-                  <p class="mb-0" style="font-size: 0.95rem">và</p>
                   <p class="mb-0" style="font-size: 0.95rem">Mẹ: Nguyễn Thị Bíp</p>
                 </div>
 
@@ -244,7 +187,7 @@
                 <div data-aos="fade-left" data-aos-duration="2000" class="pb-1">
                   <img
                     src="../../assets/images/placeholder.webp"
-                    data-src="../../assets/images/cewe.webp"
+                    data-src="/assets/images/hoai-tuan/BTT_2209.webp"
                     alt="cewe"
                     onclick="undangan.guest.modal(this)"
                     class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer"
@@ -256,7 +199,6 @@
                   <p class="mb-0" style="font-size: 0.95rem">
                     Bố: Nguyễn Đình Công
                   </p>
-                  <p class="mb-0" style="font-size: 0.95rem">và</p>
                   <p class="mb-0" style="font-size: 0.95rem">Mẹ: Đoàn Thị Hiệp</p>
                 </div>
 
@@ -466,9 +408,9 @@
           </div>
 
           <!-- Wedding Date -->
-          <section class="bg-white-black pb-2" id="wedding-date">
+          <section class="bg-white-black pb-2 pt-3" id="wedding-date">
             <div class="container text-center">
-              <!-- <WeddingCeremonyCard /> -->
+              <h2 class="font-esthetic py-4 m-0" style="font-size: 2.25rem;">Khoảnh khắc hạnh phúc</h2>
 
               <div class="border rounded-pill shadow py-2 px-4 mt-2 mb-4">
                 <div class="row justify-content-center">
@@ -580,12 +522,11 @@
                 </div>
               </div>
 
-              <p class="py-2 m-0" style="font-size: 0.95rem">
+              <!-- <p class="py-2 m-0" style="font-size: 0.95rem">
                 Demi kehangatan bersama, kami memohon kesediaan Anda untuk
                 mengenakan dress code berikut:
               </p>
 
-              <!-- Love animation -->
               <div class="position-relative">
                 <div class="position-absolute" style="top: 0%; left: 5%">
                   <svg
@@ -603,9 +544,9 @@
                     />
                   </svg>
                 </div>
-              </div>
+              </div> -->
 
-              <div class="py-2" data-aos="fade-down" data-aos-duration="1500">
+              <!-- <div class="py-2" data-aos="fade-down" data-aos-duration="1500">
                 <div
                   class="d-flex justify-content-center align-items-center mb-3"
                 >
@@ -633,21 +574,7 @@
                   ></div>
                 </div>
                 <p style="font-size: 0.95rem">Busana batik dan bersepatu.</p>
-              </div>
-
-              <div class="py-2" data-aos="fade-down" data-aos-duration="1500">
-                <a
-                  href="https://goo.gl/maps/ALZR6FJZU3kxVwN86"
-                  target="_blank"
-                  class="btn btn-outline-auto btn-sm rounded-pill shadow mb-2 px-3"
-                  ><i class="fa-solid fa-map-location-dot me-2"></i>Lihat Google
-                  Maps</a
-                >
-                <small class="d-block my-1"
-                  >RT 10 RW 02, Desa Pajerukan, Kec. Kalibagor, Kab. Banyumas,
-                  Jawa Tengah 53191.</small
-                >
-              </div>
+              </div> -->
             </div>
           </section>
 
@@ -659,182 +586,11 @@
                   class="font-esthetic text-center py-2 m-0"
                   style="font-size: 2.25rem"
                 >
-                  Galeri
+                  Album Wedding
                 </h2>
+                <AlbumPicture/>
 
-                <div
-                  id="carousel-image-one"
-                  data-aos="fade-up"
-                  data-aos-duration="1500"
-                  class="carousel slide mt-4"
-                  data-bs-ride="carousel"
-                >
-                  <div class="carousel-indicators">
-                    <button
-                      type="button"
-                      data-bs-target="#carousel-image-one"
-                      data-bs-slide-to="0"
-                      class="active"
-                      aria-current="true"
-                      aria-label="Slide 1"
-                    ></button>
-                    <button
-                      type="button"
-                      data-bs-target="#carousel-image-one"
-                      data-bs-slide-to="1"
-                      aria-label="Slide 2"
-                    ></button>
-                    <button
-                      type="button"
-                      data-bs-target="#carousel-image-one"
-                      data-bs-slide-to="2"
-                      aria-label="Slide 3"
-                    ></button>
-                  </div>
-
-                  <div class="carousel-inner rounded-4">
-                    <div class="carousel-item active">
-                      <img
-                        src="../../assets/images/placeholder.webp"
-                        data-src="https://picsum.photos/1280/720?random=1"
-                        alt="image 1"
-                        class="d-block img-fluid cursor-pointer"
-                        onclick="undangan.guest.modal(this)"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="../../assets/images/placeholder.webp"
-                        data-src="https://picsum.photos/1280/720?random=2"
-                        alt="image 2"
-                        class="d-block img-fluid cursor-pointer"
-                        onclick="undangan.guest.modal(this)"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="../../assets/images/placeholder.webp"
-                        data-src="https://picsum.photos/1280/720?random=3"
-                        alt="image 3"
-                        class="d-block img-fluid cursor-pointer"
-                        onclick="undangan.guest.modal(this)"
-                      />
-                    </div>
-                  </div>
-
-                  <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#carousel-image-one"
-                    data-bs-slide="prev"
-                  >
-                    <span
-                      class="carousel-control-prev-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-
-                  <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#carousel-image-one"
-                    data-bs-slide="next"
-                  >
-                    <span
-                      class="carousel-control-next-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
-                </div>
-
-                <div
-                  id="carousel-image-two"
-                  data-aos="fade-up"
-                  data-aos-duration="1500"
-                  class="carousel slide mt-4"
-                  data-bs-ride="carousel"
-                >
-                  <div class="carousel-indicators">
-                    <button
-                      type="button"
-                      data-bs-target="#carousel-image-two"
-                      data-bs-slide-to="0"
-                      class="active"
-                      aria-current="true"
-                      aria-label="Slide 1"
-                    ></button>
-                    <button
-                      type="button"
-                      data-bs-target="#carousel-image-two"
-                      data-bs-slide-to="1"
-                      aria-label="Slide 2"
-                    ></button>
-                    <button
-                      type="button"
-                      data-bs-target="#carousel-image-two"
-                      data-bs-slide-to="2"
-                      aria-label="Slide 3"
-                    ></button>
-                  </div>
-
-                  <div class="carousel-inner rounded-4">
-                    <div class="carousel-item active">
-                      <img
-                        src="../../assets/images/placeholder.webp"
-                        data-src="https://picsum.photos/1280/720?random=4"
-                        alt="image 4"
-                        class="d-block img-fluid cursor-pointer"
-                        onclick="undangan.guest.modal(this)"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="../../assets/images/placeholder.webp"
-                        data-src="https://picsum.photos/1280/720?random=5"
-                        alt="image 5"
-                        class="d-block img-fluid cursor-pointer"
-                        onclick="undangan.guest.modal(this)"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="../../assets/images/placeholder.webp"
-                        data-src="https://picsum.photos/1280/720?random=6"
-                        alt="image 6"
-                        class="d-block img-fluid cursor-pointer"
-                        onclick="undangan.guest.modal(this)"
-                      />
-                    </div>
-                  </div>
-
-                  <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#carousel-image-two"
-                    data-bs-slide="prev"
-                  >
-                    <span
-                      class="carousel-control-prev-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-
-                  <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#carousel-image-two"
-                    data-bs-slide="next"
-                  >
-                    <span
-                      class="carousel-control-next-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
-                </div>
+                
               </div>
             </div>
           </section>
@@ -1255,6 +1011,9 @@
     </div>
 </template>
 <script setup>
+import AlbumPicture from "./AlbumPicture.vue";
+import DesktopScreen from "./DesktopScreen.vue";
 import InvitationCard from "./InvitationCard.vue";
 import WeddingCeremonyCard from "./WeddingCeremonyCard.vue";
+
 </script>

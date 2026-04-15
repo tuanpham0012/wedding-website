@@ -8,7 +8,7 @@
 
               <div class="invitation-body">
                 <p class="invite-to">Trân Trọng Kính Mời:</p>
-                <p class="invite-name">{{ props.name }}</p>
+                <p class="invite-name">{{ name }}</p>
               </div>
 
               <button
@@ -26,11 +26,6 @@
 <script setup>
 
 const props = defineProps({
-    name: {
-        type: String,
-        required: true,
-        default: "Bạn và Gia Đình"
-    },
     showDate: {
         type: Boolean,
         default: true
@@ -40,6 +35,10 @@ const props = defineProps({
         default: true
     }
 })
+
+const params = new URLSearchParams(window.location.search)
+
+const name = params.get('name') ?? "Bạn và Gia Đình"
 </script>
 <style lang="">
     

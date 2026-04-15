@@ -16,6 +16,15 @@
         <p class="ceremony-label">TẠI</p>
         <p class="ceremony-venue">TRUNG TÂM TIỆC CƯỚI CUNG XUÂN</p>
         <p class="ceremony-address">01 Võ Thị Sáu, Bạch Mai, Hai Bà Trưng, Hà Nội</p>
+        <div class="pt-2" data-aos="fade-down" data-aos-duration="1500">
+                <a
+                  href="https://goo.gl/maps/ALZR6FJZU3kxVwN86"
+                  target="_blank"
+                  class="btn btn-outline-auto btn-sm rounded-pill shadow px-3"
+                  ><i class="fa-solid fa-map-location-dot me-2"></i>Xem Google
+                  Maps</a
+                >
+              </div>
       </div>
     </article>
   </div>

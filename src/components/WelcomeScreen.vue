@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import InvitationCard from './InvitationCard.vue';
+
+</script>
+
 <template>
 <!-- generated section for WelcomeScreen -->
 <!-- Welcome Page -->
@@ -12,7 +17,7 @@
 
           <img
             src="../../assets/images/placeholder.webp"
-            data-src="../../assets/images/bg.webp"
+            data-src="/assets/images/hoai-tuan/BTT_2375.webp"
             alt="background"
             class="img-center-crop rounded-circle border border-3 border-light shadow mb-4 mx-auto"
           />
@@ -25,28 +30,7 @@
             data-message="Kepada Yth Bapak/Ibu/Saudara/i"
           ></div>
 
-          <div
-            class="container-invitation border border-3 border-light mx-auto" id="container-invitation"
-          >
-            <div class="invitation-card text-center">
-              <div class="invitation-topline"></div>
-              <div class="invitation-date">11.04.2026</div>
-
-              <div class="invitation-body">
-                <p class="invite-to">Trân Trọng Kính Mời:</p>
-                <p class="invite-name">Bạn Tuấn và người thương</p>
-              </div>
-
-              <button
-                type="button"
-                class="btn btn-light shadow rounded-4 mt-3 mx-auto open-invitation"
-                onclick="undangan.guest.open(this)"
-              >
-                <i class="fa-solid fa-envelope-open fa-bounce me-2"></i>Open
-                Invitation
-              </button>
-            </div>
-          </div>
+          <InvitationCard />
         </div>
       </div>
     </div>
