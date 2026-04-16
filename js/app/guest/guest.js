@@ -12,7 +12,7 @@ import { session } from '../../common/session.js';
 import { offline } from '../../common/offline.js';
 import { comment } from '../components/comment.js';
 import * as confetti from '../../libs/confetti.js';
-import { pool } from '../../connection/request.js';
+import { pool, isApiEnabled } from '../../connection/request.js';
 
 export const guest = (() => {
 
@@ -25,6 +25,16 @@ export const guest = (() => {
      * @type {ReturnType<typeof storage>|null}
      */
     let config = null;
+
+    /**
+     * @returns {boolean}
+     */
+    const isSkipLoadingImage = () => String(document.body.getAttribute('data-skip-loading-image') ?? 'false').toLowerCase() === 'true';
+
+    /**
+     * @returns {boolean}
+     */
+    const isSkipBooting = () => String(document.body.getAttribute('data-skip-booting') ?? 'false').toLowerCase() === 'true';
 
     /**
      * @returns {void}
@@ -317,6 +327,20 @@ export const guest = (() => {
      * @returns {void}
      */
     const pageLoaded = () => {
+        const apiEnabled = isApiEnabled();
+        const skipLoadingImage = isSkipLoadingImage();
+        const skipBooting = isSkipBooting();
+        let booted = false;
+
+        const runBooting = () => {
+            if (booted) {
+                return;
+            }
+
+            booted = true;
+            booting();
+        };
+
         lang.init();
         offline.init();
         comment.init();
@@ -333,11 +357,32 @@ export const guest = (() => {
         const params = new URLSearchParams(window.location.search);
 
         window.addEventListener('resize', util.debounce(slide));
-        document.addEventListener('undangan.progress.done', () => booting());
+        document.addEventListener('undangan.progress.done', runBooting);
         document.addEventListener('hide.bs.modal', () => document.activeElement?.blur());
         document.getElementById('button-modal-download').addEventListener('click', (e) => {
             img.download(e.currentTarget.getAttribute('data-src'));
         });
+
+        if (skipLoadingImage) {
+            progress.complete('image', true);
+        }
+
+        if (skipBooting) {
+            runBooting();
+        }
+
+        if (!apiEnabled) {
+            document.getElementById('comment')?.remove();
+            document.querySelector('a.nav-link[href="#comment"]')?.closest('li.nav-item')?.remove();
+
+            vid.load();
+            if (!skipLoadingImage) {
+                img.load();
+            }
+            aud.load();
+            lib.load({ confetti: document.body.getAttribute('data-confetti') === 'true' });
+            return;
+        }
 
         if (!token || token.length <= 0) {
             document.getElementById('comment')?.remove();
@@ -356,7 +401,7 @@ export const guest = (() => {
             progress.add();
 
             // if don't have data-src.
-            if (!img.hasDataSrc()) {
+            if (!skipLoadingImage && !img.hasDataSrc()) {
                 img.load();
             }
 
@@ -364,7 +409,7 @@ export const guest = (() => {
                 document.dispatchEvent(new Event('undangan.session'));
                 progress.complete('config');
 
-                if (img.hasDataSrc()) {
+                if (!skipLoadingImage && img.hasDataSrc()) {
                     img.load();
                 }
 
@@ -396,13 +441,7 @@ export const guest = (() => {
         }
 
         window.addEventListener('load', () => {
-            pool.init(pageLoaded, [
-                'image',
-                'video',
-                'audio',
-                'libs',
-                'gif',
-            ]);
+            pool.init(pageLoaded);
         });
 
         return {

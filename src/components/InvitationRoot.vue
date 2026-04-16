@@ -21,8 +21,7 @@
             class="bg-light-dark position-relative overflow-hidden p-0 m-0"
           >
             <img
-              src="../../assets/images/placeholder.webp"
-              data-src="../../assets/images/bg.webp"
+              src="/assets/images/bg.webp"
               alt="bg"
               class="position-absolute opacity-25 top-50 start-50 translate-middle bg-cover-home"
             />
@@ -39,8 +38,7 @@
               </h1>
 
               <img
-                src="../../assets/images/placeholder.webp"
-                data-src="/assets/images/hoai-tuan/BTT_1952.webp"
+                src="/assets/images/hoai-tuan/BTT_1952.webp"
                 alt="bg"
                 onclick="undangan.guest.modal(this)"
                 class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer"
@@ -126,8 +124,7 @@
                   class="pb-1"
                 >
                   <img
-                    src="../../assets/images/placeholder.webp"
-                    data-src="/assets/images/hoai-tuan/BTT_2213.webp"
+                    src="/assets/images/hoai-tuan/BTT_2213.webp"
                     alt="cowo"
                     onclick="undangan.guest.modal(this)"
                     class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer"
@@ -186,8 +183,7 @@
 
                 <div data-aos="fade-left" data-aos-duration="2000" class="pb-1">
                   <img
-                    src="../../assets/images/placeholder.webp"
-                    data-src="/assets/images/hoai-tuan/BTT_2209.webp"
+                    src="/assets/images/hoai-tuan/BTT_2209.webp"
                     alt="cewe"
                     onclick="undangan.guest.modal(this)"
                     class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer"
@@ -255,7 +251,7 @@
                 <div
                   id="video-love-stroy"
                   class="position-relative rounded-4 mb-2 pb-0"
-                  data-src="./assets/video/265501_tiny.mp4"
+                  data-src="/assets/video/265501_tiny.mp4"
                   data-vid-class="w-100 rounded-4 shadow-sm m-0 p-0"
                 >
                   <div
@@ -698,8 +694,7 @@
                   <hr class="my-2 py-1" />
                   <div class="d-flex justify-content-center align-items-center">
                     <img
-                      src="../../assets/images/placeholder.webp"
-                      data-src="../../assets/images/donate.png"
+                      src="/assets/images/donate.png"
                       alt="donate"
                       class="img-fluid rounded-3 mx-auto bg-white"
                     />
@@ -936,32 +931,8 @@
               >
                 <div class="col-auto">
                   <small
-                    >Build with<i class="fa-solid fa-heart mx-1"></i
-                    >Dewanakl</small
-                  >
-                </div>
-                <div class="col-auto">
-                  <small
-                    ><i class="fa-brands fa-github me-1"></i
-                    ><a
-                      target="_blank"
-                      href="https://github.com/dewanakl/undangan"
-                      >github</a
-                    ></small
-                  >
-                  <small
-                    ><i class="fa-solid fa-chart-simple me-1"></i
-                    ><a target="_blank" href="https://status.ulems.my.id"
-                      >status</a
-                    ></small
-                  >
-                  <small
-                    ><i class="fa-solid fa-music me-1"></i
-                    ><a
-                      target="_blank"
-                      href="https://pixabay.com/music/modern-classical-pure-love-304010"
-                      >music</a
-                    ></small
+                    >T<i class="fa-solid fa-heart mx-1"></i
+                    >H</small
                   >
                 </div>
               </div>

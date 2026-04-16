@@ -1,6 +1,13 @@
 import { request, cacheWrapper, HTTP_GET } from './request.js';
 
 export const cache = (cacheName) => {
+    const noCacheNames = new Set([
+        'image',
+        'video',
+        'audio',
+        'libs',
+        'gif',
+    ]);
 
     /**
      * @type {Map<string, string>}
@@ -15,7 +22,7 @@ export const cache = (cacheName) => {
     /**
      * @type {ReturnType<typeof cacheWrapper>}
      */
-    const cw = cacheWrapper(cacheName);
+    const cw = noCacheNames.has(cacheName) ? null : cacheWrapper(cacheName);
 
     let ttl = 1000 * 60 * 60 * 6;
 
@@ -31,6 +38,10 @@ export const cache = (cacheName) => {
             throw new Error(res.statusText);
         }
 
+        if (!cw) {
+            return Promise.resolve(res);
+        }
+
         return cw.set(input, res, forceCache, ttl);
     };
 
@@ -38,13 +49,13 @@ export const cache = (cacheName) => {
      * @param {string|URL} input 
      * @returns {Promise<Response|null>}
      */
-    const has = (input) => cw.has(input);
+    const has = (input) => (cw ? cw.has(input) : Promise.resolve(null));
 
     /**
      * @param {string|URL} input 
      * @returns {Promise<boolean>}
      */
-    const del = (input) => cw.del(input);
+    const del = (input) => (cw ? cw.del(input) : Promise.resolve(true));
 
     /**
      * @param {string} input
@@ -77,11 +88,93 @@ export const cache = (cacheName) => {
     };
 
     /**
+     * @param {string} input
+     * @param {Promise<void>|null} [cancel=null]
+     * @returns {Promise<string>}
+     */
+    const getNoCache = (input, cancel = null) => {
+        if (objectUrls.has(input)) {
+            return Promise.resolve(objectUrls.get(input));
+        }
+
+        if (inFlightRequests.has(input)) {
+            return inFlightRequests.get(input);
+        }
+
+        const inflightPromise = request(HTTP_GET, input)
+            .withCancel(cancel)
+            .withRetry()
+            .default()
+            .then((r) => r.blob())
+            .then((b) => objectUrls.set(input, URL.createObjectURL(b)))
+            .then(() => objectUrls.get(input))
+            .finally(() => inFlightRequests.delete(input));
+
+        inFlightRequests.set(input, inflightPromise);
+        return inflightPromise;
+    };
+
+    /**
+     * @param {object[]} items
+     * @param {Promise<void>|null} cancel
+     * @returns {Promise<void>}
+     */
+    const runNoCache = (items, cancel = null) => {
+        const uniq = new Map();
+
+        if (items.length === 0) {
+            return Promise.resolve();
+        }
+
+        items.filter((val) => val !== null).forEach((val) => {
+            const exist = uniq.get(val.url) ?? [];
+            uniq.set(val.url, [...exist, [val.res, val?.rej]]);
+        });
+
+        return Promise.allSettled(Array.from(uniq).map(([k, v]) => getNoCache(k, cancel)
+            .then((s) => {
+                v.forEach((cb) => cb[0]?.(s));
+                return s;
+            })
+            .catch((r) => {
+                v.forEach((cb) => cb[1]?.(r));
+                return r;
+            })
+        ));
+    };
+
+    /**
+     * @param {string} input
+     * @param {string} name
+     * @returns {Promise<Response>}
+     */
+    const downloadNoCache = async (input, name) => {
+        const reverse = new Map(Array.from(objectUrls.entries()).map(([k, v]) => [v, k]));
+
+        if (!reverse.has(input)) {
+            try {
+                const checkUrl = new URL(input);
+                if (!checkUrl.protocol.includes('blob')) {
+                    throw new Error('Is not blob');
+                }
+            } catch {
+                input = await getNoCache(input);
+            }
+        }
+
+        return request(HTTP_GET, input).withDownload(name).default();
+    };
+
+    /**
      * @param {object[]} items
      * @param {Promise<void>|null} cancel
      * @returns {Promise<void>}
      */
     const run = (items, cancel = null) => {
+        if (!cw) {
+            return runNoCache(items, cancel);
+        }
+
         const uniq = new Map();
 
         if (items.length === 0) {
@@ -111,6 +204,10 @@ export const cache = (cacheName) => {
      * @returns {Promise<Response>}
      */
     const download = async (input, name) => {
+        if (!cw) {
+            return downloadNoCache(input, name);
+        }
+
         const reverse = new Map(Array.from(objectUrls.entries()).map(([k, v]) => [v, k]));
 
         if (!reverse.has(input)) {

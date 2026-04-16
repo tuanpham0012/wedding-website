@@ -10,7 +10,7 @@
                 class="btn d-flex justify-content-center align-items-center bg-overlay-auto p-2 m-1 rounded-circle border shadow-sm z-1"
                 role="button"
                 target="_blank"
-                href="../../assets/images/placeholder.webp"
+                href="/assets/images/placeholder.webp"
                 id="button-modal-click"
               >
                 <i
@@ -39,7 +39,7 @@
             </div>
 
             <img
-              src="../../assets/images/placeholder.webp"
+              src="/assets/images/placeholder.webp"
               class="img-fluid w-100 rounded-4 cursor-pointer"
               alt="image"
               id="show-modal-image"

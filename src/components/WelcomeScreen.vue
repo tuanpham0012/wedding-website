@@ -16,8 +16,7 @@ import InvitationCard from './InvitationCard.vue';
           </h2>
 
           <img
-            src="../../assets/images/placeholder.webp"
-            data-src="/assets/images/hoai-tuan/BTT_2375.webp"
+            src="/assets/images/hoai-tuan/BTT_2375.webp"
             alt="background"
             class="img-center-crop rounded-circle border border-3 border-light shadow mb-4 mx-auto"
           />

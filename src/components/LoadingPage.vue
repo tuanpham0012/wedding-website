@@ -7,8 +7,8 @@
       >
         <div class="d-flex flex-column width-loading text-center">
           <img
-            src="../../assets/images/placeholder.webp"
-            data-src="../../assets/images/icon-192x192.png"
+            src="/assets/images/placeholder.webp"
+            data-src="/assets/images/icon-192x192.png"
             fetchpriority="high"
             class="img-fluid mb-3 mx-auto object-fit-cover opacity-0"
             alt="icon"

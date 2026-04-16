@@ -56,6 +56,13 @@ export const audio = (() => {
                 music.innerHTML = statePlay;
             } catch (err) {
                 isPlay = false;
+                music.disabled = false;
+
+                if (err?.name === 'NotSupportedError' || String(err?.message ?? '').includes('supported sources')) {
+                    console.warn('Audio playback is unavailable:', err);
+                    return;
+                }
+
                 util.notify(err).error();
             }
         };
