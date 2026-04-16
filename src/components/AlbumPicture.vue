@@ -63,61 +63,17 @@ const thumbnailsConfig = {
   gap: 10,
 }
 
-const images = [
-  '/assets/images/hoai-tuan/BTT_1911.webp',
-  '/assets/images/hoai-tuan/BTT_1932.webp',
-  '/assets/images/hoai-tuan/BTT_1952.webp',
-  '/assets/images/hoai-tuan/BTT_2027.webp',
-  '/assets/images/hoai-tuan/BTT_2044.webp',
-  '/assets/images/hoai-tuan/BTT_2052.webp',
-  '/assets/images/hoai-tuan/BTT_2095.webp',
-  '/assets/images/hoai-tuan/BTT_2137.webp',
-  '/assets/images/hoai-tuan/BTT_2185.webp',
-  '/assets/images/hoai-tuan/BTT_2209.webp',
-  '/assets/images/hoai-tuan/BTT_2213.webp',
-  '/assets/images/hoai-tuan/BTT_2227.webp',
-  '/assets/images/hoai-tuan/BTT_2232.webp',
-  '/assets/images/hoai-tuan/BTT_2237.webp',
-  '/assets/images/hoai-tuan/BTT_2254.webp',
-  '/assets/images/hoai-tuan/BTT_2260.webp',
-  '/assets/images/hoai-tuan/BTT_2269.webp',
-  '/assets/images/hoai-tuan/BTT_2276.webp',
-  '/assets/images/hoai-tuan/BTT_2285.webp',
-  '/assets/images/hoai-tuan/BTT_2286.webp',
-  '/assets/images/hoai-tuan/BTT_2290.webp',
-  '/assets/images/hoai-tuan/BTT_2316.webp',
-  '/assets/images/hoai-tuan/BTT_2328.webp',
-  '/assets/images/hoai-tuan/BTT_2375.webp',
-  '/assets/images/hoai-tuan/BTT_2405.webp',
-]
+const images = Object.values(
+  import.meta.glob("/assets/images/hoai-tuan/*.{png,jpg,jpeg,webp,svg}", {
+    eager: true,
+    import: "default",
+  }))
 
-const thumbs = [
-  '/assets/images/thumbnails/BTT_1911.webp',
-  '/assets/images/thumbnails/BTT_1932.webp',
-  '/assets/images/thumbnails/BTT_1952.webp',
-  '/assets/images/thumbnails/BTT_2027.webp',
-  '/assets/images/thumbnails/BTT_2044.webp',
-  '/assets/images/thumbnails/BTT_2052.webp',
-  '/assets/images/thumbnails/BTT_2095.webp',
-  '/assets/images/thumbnails/BTT_2137.webp',
-  '/assets/images/thumbnails/BTT_2185.webp',
-  '/assets/images/thumbnails/BTT_2209.webp',
-  '/assets/images/thumbnails/BTT_2213.webp',
-  '/assets/images/thumbnails/BTT_2227.webp',
-  '/assets/images/thumbnails/BTT_2232.webp',
-  '/assets/images/thumbnails/BTT_2237.webp',
-  '/assets/images/thumbnails/BTT_2254.webp',
-  '/assets/images/thumbnails/BTT_2260.webp',
-  '/assets/images/thumbnails/BTT_2269.webp',
-  '/assets/images/thumbnails/BTT_2276.webp',
-  '/assets/images/thumbnails/BTT_2285.webp',
-  '/assets/images/thumbnails/BTT_2286.webp',
-  '/assets/images/thumbnails/BTT_2290.webp',
-  '/assets/images/thumbnails/BTT_2316.webp',
-  '/assets/images/thumbnails/BTT_2328.webp',
-  '/assets/images/thumbnails/BTT_2375.webp',
-  '/assets/images/thumbnails/BTT_2405.webp',
-]
+const thumbs = Object.values(
+  import.meta.glob("/assets/images/thumbnails/*.{png,jpg,jpeg,webp,svg}", {
+    eager: true,
+    import: "default",
+  }))
 
 </script>
 <style lang="css" scoped>
