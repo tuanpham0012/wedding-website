@@ -1,26 +1,32 @@
 <template lang="">
   <div
-    class="sticky-top vh-100 d-none d-sm-block col-sm-5 col-md-6 col-lg-7 col-xl-8 col-xxl-9 overflow-y-hidden m-0 p-0"
+    class="sticky-top vh-100 d-none d-sm-block col-sm-5 col-md-6 col-lg-7 col-xl-8 col-xxl-9 overflow-y-hidden m-0 p-0 "
   >
     <div
       class="position-relative bg-white-black d-flex justify-content-center align-items-center vh-100"
     >
-      <Carousel v-bind="config" class="position-absolute h-100 w-100 slide-desktop">
-        <Slide
-          v-for="(img, index) in images"
-          :key="index"
-        >
+      <Carousel
+        v-bind="config"
+        class="position-absolute h-100 w-100 slide-desktop"
+      >
+        <Slide v-for="(img, index) in images" :key="index">
           <div class="carousel__item">
             <img
               :src="img"
               alt="bg"
-              class="bg-cover-home"
-              style="mask-image: none; opacity: 40%"
+              class="bg-cover-home object-fit-contain"
+              style="
+                mask-image: none;
+                opacity: 35%;
+              "
             />
           </div>
         </Slide>
       </Carousel>
-      <div class="text-center p-5 bg-overlay-auto rounded-5" style="z-index: 10000">
+      <div
+        class="text-center p-5 bg-overlay-auto rounded-5"
+        style="z-index: 10000"
+      >
         <h2 class="font-esthetic mb-4" style="font-size: 2rem">
           Quốc Tuấn &amp; Thu Hoài
         </h2>
@@ -45,7 +51,8 @@ const images = Object.values(
   import.meta.glob("/assets/images/hoai-tuan/*.{png,jpg,jpeg,webp,svg}", {
     eager: true,
     import: "default",
-  }))
+  }),
+);
 </script>
 <style lang="css" scoped>
 .carousel {

@@ -1,6 +1,6 @@
 <template>
   <div class="ceremony-card-wrapper bg-white-black">
-    <article class="ceremony-card text-center border border-1 border-secondary-subtle px-2 py-5">
+    <article class="ceremony-card text-center border border-1 border-secondary-subtle px-2 py-4">
       <div class="ceremony-divider"></div>
 
       <p class="ceremony-kicker pb-3">TRÂN TRỌNG KÍNH MỜI</p>
@@ -9,16 +9,16 @@
         <h3 class="ceremony-title">TIỆC MỪNG LỄ THÀNH HÔN</h3>
         <div class="ceremony-divider ceremony-divider-sm"></div>
 
-        <p class="ceremony-time pb-3">VÀO LÚC 10:30 - THỨ 7</p>
-        <p class="ceremony-date">11 | 04 | 2026</p>
+        <p class="ceremony-time pb-3">VÀO LÚC 9:30 - THỨ 7</p>
+        <p class="ceremony-date">03 | 05 | 2026</p>
         <p class="ceremony-lunar pb-3">(Tức Ngày 24 Tháng 02 Năm Bính Ngọ)</p>
 
         <p class="ceremony-label">TẠI</p>
-        <p class="ceremony-venue">TRUNG TÂM TIỆC CƯỚI CUNG XUÂN</p>
-        <p class="ceremony-address">01 Võ Thị Sáu, Bạch Mai, Hai Bà Trưng, Hà Nội</p>
-        <div class="pt-2" data-aos="fade-down" data-aos-duration="1500">
+        <p class="ceremony-venue">Tư gia nhà trai</p>
+        <p class="ceremony-address">Thôn Quỳnh Huê, Xã Yết Kiêu, Tp Hải Phòng</p>
+        <div class="pt-4" data-aos="fade-down" data-aos-duration="1500">
                 <a
-                  href="https://goo.gl/maps/ALZR6FJZU3kxVwN86"
+                  href="https://maps.app.goo.gl/TBHeQE8ycxLndG4dA"
                   target="_blank"
                   class="btn btn-outline-auto btn-sm rounded-pill shadow px-3"
                   ><i class="fa-solid fa-map-location-dot me-2"></i>Xem Google

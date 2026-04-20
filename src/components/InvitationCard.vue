@@ -17,8 +17,7 @@
                 :class="{ 'opacity-0': !props.showBtnInvitation }"
                 onclick="undangan.guest.open(this)"
               >
-                <i class="fa-solid fa-envelope-open fa-bounce me-2"></i>Open
-                Invitation
+                <i class="fa-solid fa-envelope-open fa-bounce me-2"></i>Xem thư mời
               </button>
             </div>
           </div>
