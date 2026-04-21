@@ -251,7 +251,7 @@
               <div
                 id="video-love-stroy"
                 class="position-relative rounded-4 mb-2 pb-0"
-                data-src="../../assets/video/hoai-tuan.mp4"
+                data-src="assets/video/hoai-tuan.mp4"
                 data-vid-class="w-100 rounded-4 shadow-sm m-0 p-0"
               >
                 <div
