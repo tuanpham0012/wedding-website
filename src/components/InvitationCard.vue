@@ -4,7 +4,7 @@
           >
             <div class="invitation-card text-center">
               <div class="invitation-topline"></div>
-              <div class="invitation-date" :class="{ 'opacity-0': !props.showDate }">11.04.2026</div>
+              <div class="invitation-date" :class="{ 'opacity-0': !props.showDate }">03.05.2026</div>
 
               <div class="invitation-body">
                 <p class="invite-to">Trân Trọng Kính Mời:</p>

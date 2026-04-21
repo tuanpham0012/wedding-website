@@ -45,10 +45,10 @@
             />
 
             <h2 class="font-esthetic my-4" style="font-size: 2.25rem">
-              Quốc Tuấn &amp; Thu Hoài
+              Quốc Tuấn&nbsp;&nbsp;&nbsp;&amp;&nbsp;&nbsp;&nbsp;Thu Hoài
             </h2>
             <p class="my-2" style="font-size: 1.25rem">
-              Thứ Bảy, 02 Thắng 05 năm 2026
+              Chủ Nhật, 03 Thắng 05 năm 2026
             </p>
 
             <InvitationCard
@@ -101,7 +101,7 @@
             TRÂN TRỌNG BÁO TIN LỄ THÀNH HÔN CỦA:
           </p>
           <h2 class="font-esthetic my-4" style="font-size: 1.875rem">
-            Quốc Tuấn &amp; Thu Hoài
+            Quốc Tuấn&nbsp;&nbsp; &amp; &nbsp;&nbsp;Thu Hoài
           </h2>
 
           <div class="overflow-x-hidden pb-4">
@@ -238,157 +238,170 @@
         <!--      -->
 
         <!-- Love Story -->
-        <!-- <section class="bg-light-dark pt-2 pb-4">
-            <div class="container">
-              <div class="bg-theme-auto rounded-5 shadow p-3">
-                <h2
-                  class="font-esthetic text-center py-2 mb-2"
-                  style="font-size: 2.125rem"
-                >
-                  Kisah Cinta
-                </h2>
+        <section class="bg-light-dark pt-2 pb-4">
+          <div class="container">
+            <div class="bg-theme-auto rounded-5 shadow p-3">
+              <h2
+                class="font-esthetic text-center py-2 mb-2"
+                style="font-size: 2.125rem"
+              >
+                Câu chuyện tình yêu
+              </h2>
 
+              <div
+                id="video-love-stroy"
+                class="position-relative rounded-4 mb-2 pb-0"
+                data-src="./assets/video/hoai-tuan.mp4"
+                data-vid-class="w-100 rounded-4 shadow-sm m-0 p-0"
+              >
                 <div
-                  id="video-love-stroy"
-                  class="position-relative rounded-4 mb-2 pb-0"
-                  data-src="/assets/video/265501_tiny.mp4"
-                  data-vid-class="w-100 rounded-4 shadow-sm m-0 p-0"
+                  class="position-absolute d-flex flex-column justify-content-center align-items-center top-50 start-50 translate-middle w-100 h-100 bg-overlay-auto rounded-4 z-3"
+                  id="video-love-stroy-loading"
                 >
                   <div
-                    class="position-absolute d-flex flex-column justify-content-center align-items-center top-50 start-50 translate-middle w-100 h-100 bg-overlay-auto rounded-4 z-3"
-                    id="video-love-stroy-loading"
+                    class="progress w-25"
+                    role="progressbar"
+                    style="height: 0.5rem"
+                    aria-label="progress bar"
                   >
                     <div
-                      class="progress w-25"
-                      role="progressbar"
-                      style="height: 0.5rem"
-                      aria-label="progress bar"
-                    >
-                      <div
-                        class="progress-bar"
-                        id="progress-bar-video-love-stroy"
-                        style="width: 0%"
-                      ></div>
-                    </div>
-                    <small
-                      class="mt-1 text-theme-auto bg-theme-auto py-0 px-2 rounded-4"
-                      id="progress-info-video-love-stroy"
-                      style="font-size: 0.7rem"
-                    ></small>
+                      class="progress-bar"
+                      id="progress-bar-video-love-stroy"
+                      style="width: 0%"
+                    ></div>
                   </div>
+                  <small
+                    class="mt-1 text-theme-auto bg-theme-auto py-0 px-2 rounded-4"
+                    id="progress-info-video-love-stroy"
+                    style="font-size: 0.7rem"
+                  ></small>
+                </div>
+              </div>
+
+              <div class="position-relative">
+                <div
+                  class="position-absolute d-flex justify-content-center align-items-center top-50 start-50 translate-middle w-100 h-100 bg-overlay-auto z-3"
+                  style="opacity: 100%; background-color: unset"
+                >
+                  <button
+                    class="btn btn-outline-auto btn-sm rounded-4 shadow-sm"
+                    onclick="undangan.guest.showStory(this.parentNode)"
+                  >
+                    <i class="fa-solid fa-heart fa-bounce me-2"></i>Xem câu
+                    chuyện
+                  </button>
                 </div>
 
-                <div class="position-relative">
-                  <div
-                    class="position-absolute d-flex justify-content-center align-items-center top-50 start-50 translate-middle w-100 h-100 bg-overlay-auto z-3"
-                    style="opacity: 100%; background-color: unset"
-                  >
-                    <button
-                      class="btn btn-outline-auto btn-sm rounded-4 shadow-sm"
-                      onclick="undangan.guest.showStory(this.parentNode)"
-                    >
-                      <i class="fa-solid fa-heart fa-bounce me-2"></i>Lihat
-                      Story
-                    </button>
-                  </div>
+                <div
+                  class="overflow-y-scroll overflow-x-hidden p-2 with-scrollbar"
+                  style="height: 15rem"
+                >
+                  <div class="row">
+                    <div class="col-auto position-relative">
+                      <p
+                        class="position-relative d-flex justify-content-center align-items-center bg-theme-auto border border-secondary border-2 opacity-100 rounded-circle m-0 p-0 z-1"
+                        style="width: 2rem; height: 2rem"
+                      >
+                        1
+                      </p>
+                      <hr
+                        class="position-absolute top-0 start-50 translate-middle-x border border-secondary h-100 z-0 opacity-100 m-0 rounded-4 shadow-none"
+                      />
+                    </div>
+                    <div class="col mt-1 mb-3 ps-0">
+                      <p class="fw-bold mb-2">
+                        💼 Sự khởi đầu của một chuyện tình
+                      </p>
+                      <div class="small mb-0">
+                        <p>
+                          Họ gặp nhau vào năm nhất đại học, trong một lớp học
+                          đông đúc và ồn ào. Tuấn là chàng trai ít nói, luôn
+                          ngồi ở góc cuối lớp, còn Hoài thì hoạt bát, hay cười và
+                          lúc nào cũng có bạn bè xung quanh. Hai con người tưởng
+                          như chẳng có điểm chung ấy lại vô tình trở thành bạn
+                          khi cùng làm chung một bài thuyết trình.
+                        </p>
 
-                  <div
-                    class="overflow-y-scroll overflow-x-hidden p-2 with-scrollbar"
-                    style="height: 15rem"
-                  >
-                    <div class="row">
-                      <div class="col-auto position-relative">
-                        <p
-                          class="position-relative d-flex justify-content-center align-items-center bg-theme-auto border border-secondary border-2 opacity-100 rounded-circle m-0 p-0 z-1"
-                          style="width: 2rem; height: 2rem"
-                        >
-                          1
+                        <p>
+                          Ban đầu chỉ là những buổi gặp gỡ để làm bài, rồi dần
+                          dần là những lần đi ăn sau giờ học, những tin nhắn hỏi
+                          han vu vơ mỗi tối. Tuấn quen với việc có Hoài bên cạnh,
+                          còn Hoài thì nhận ra cô luôn cảm thấy dễ chịu khi ở
+                          cạnh Tuấn. Nhưng suốt những năm đại học, họ chỉ dừng
+                          lại ở tình bạn – một tình bạn đủ sâu để không ai dám
+                          bước qua ranh giới.
                         </p>
-                        <hr
-                          class="position-absolute top-0 start-50 translate-middle-x border border-secondary h-100 z-0 opacity-100 m-0 rounded-4 shadow-none"
-                        />
-                      </div>
-                      <div class="col mt-1 mb-3 ps-0">
-                        <p class="fw-bold mb-2">💼 Awal Pertemuan Sederhana</p>
-                        <p class="small mb-0">
-                          Pada Januari 2025, Wahyu, seorang desainer grafis
-                          berusia 28 tahun, bertemu Riski, copywriter yang
-                          dikenal cerdas dan pendiam, dalam proyek branding
-                          perusahaan. Interaksi mereka di ruang rapat terbatas
-                          pada urusan kerja, penuh adab dan profesional. Tanpa
-                          Wahyu ketahui, Riski sebenarnya pernah melihat karya
-                          desain Wahyu di lomba nasional dua tahun lalu dan
-                          kagum dengan bakatnya. Namun, sesuai prinsipnya, Riski
-                          menjaga jarak dan hanya fokus pada tugas, menghindari
-                          interaksi yang tidak perlu.
+
+                        <p>
+                          Ngày tốt nghiệp, giữa dòng người chụp ảnh và chia tay,
+                          Hoài bất ngờ hỏi:
                         </p>
+                        <p class="quote">
+                          “Sau này nếu tụi mình vẫn còn bên nhau, cậu có nghĩ
+                          đến chuyện yêu tớ không?”
+                        </p>
+
+                        <p>Tuấn không trả lời ngay, chỉ cười và nói:</p>
+                        <p class="quote">“Để sau này xem.”</p>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-auto position-relative">
-                        <p
-                          class="position-relative d-flex justify-content-center align-items-center bg-theme-auto border border-secondary border-2 opacity-100 rounded-circle m-0 p-0 z-1"
-                          style="width: 2rem; height: 2rem"
-                        >
-                          2
-                        </p>
-                        <hr
-                          class="position-absolute top-0 start-50 translate-middle-x border border-secondary h-100 z-0 opacity-100 m-0 rounded-4 shadow-none"
-                        />
-                      </div>
-                      <div class="col mt-1 mb-3 ps-0">
-                        <p class="fw-bold mb-2">💞 Benih Cinta dalam Ujian</p>
-                        <p class="small mb-0">
-                          Memasuki Februari 2025, proyek mereka menghadapi
-                          krisis: klien menolak konsep awal dan mengancam
-                          membatalkan kontrak. Di tengah tekanan, Riski tampil
-                          dengan solusi kreatif yang menyelamatkan proyek,
-                          membuat Wahyu terkesan dengan ketenangan dan
-                          kecerdasannya. Diam-diam, Wahyu mulai memperhatikan
-                          Riski lebih dalam, terutama melalui unggahan media
-                          sosialnya yang penuh dengan nilai keimanan dan
-                          kesabaran. Merasa ada kesamaan visi, Wahyu
-                          beristikharah dan memutuskan memulai taaruf. Ia
-                          menghubungi seorang ustaz terpercaya sebagai
-                          perantara. Kejutan muncul saat Riski mengaku bahwa ia
-                          juga telah lama memperhatikan Wahyu, namun menahan
-                          diri hingga ada niat yang jelas, sebuah pengakuan yang
-                          membuat hati Wahyu hangat.
-                        </p>
-                      </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-auto position-relative">
+                      <p
+                        class="position-relative d-flex justify-content-center align-items-center bg-theme-auto border border-secondary border-2 opacity-100 rounded-circle m-0 p-0 z-1"
+                        style="width: 2rem; height: 2rem"
+                      >
+                        2
+                      </p>
+                      <hr
+                        class="position-absolute top-0 start-50 translate-middle-x border border-secondary h-100 z-0 opacity-100 m-0 rounded-4 shadow-none"
+                      />
                     </div>
-                    <div class="row">
-                      <div class="col-auto position-relative">
-                        <p
-                          class="position-relative d-flex justify-content-center align-items-center bg-theme-auto border border-secondary border-2 opacity-100 rounded-circle m-0 p-0 z-1"
-                          style="width: 2rem; height: 2rem"
-                        >
-                          3
+                    <div class="col mt-1 mb-3 ps-0">
+                      <p class="fw-bold mb-2">
+                        💞 Những hạt giống tình yêu trong thử thách
+                      </p>
+                      <div class="small mb-0">
+                        <p>
+                          Ra trường, mỗi người một công việc, cuộc sống bận rộn
+                          hơn, nhưng họ vẫn giữ thói quen nói chuyện mỗi ngày.
+                          Những buổi cà phê cuối tuần, những lần cùng nhau vượt
+                          qua áp lực công việc… khiến khoảng cách “bạn bè” dần
+                          trở nên mỏng manh.
                         </p>
-                        <hr
-                          class="position-absolute top-0 start-50 translate-middle-x border border-secondary h-100 z-0 opacity-100 m-0 rounded-4 shadow-none"
-                        />
-                      </div>
-                      <div class="col mt-1 mb-3 ps-0">
-                        <p class="fw-bold mb-2">
-                          💍 Langkah Menuju Ridha Allah
+
+                        <p>
+                          Một tối mưa, Tuấn đến đón Hoài tan làm. Không hiểu vì
+                          sao, cả hai im lặng rất lâu. Rồi Tuấn khẽ nói:
                         </p>
-                        <p class="small mb-0">
-                          Proses taaruf berjalan penuh keikhlasan, dengan
-                          pendamping yang memastikan setiap langkah sesuai
-                          syariat. Wahyu dan Riski saling terbuka tentang impian
-                          membangun keluarga yang diridhai Allah. Namun, sebuah
-                          ujian datang: keluarga Riski ragu karena latar
-                          belakang ekonomi Wahyu yang sederhana. Di sinilah plot
-                          twist terungkap—Wahyu mempresentasikan rencana usaha
-                          sosial berbasis seni yang telah ia kembangkan
-                          diam-diam, menunjukkan visinya untuk memberi manfaat
-                          bagi umat. Presentasi itu meluluhkan hati keluarga
-                          Riski. Pada Maret 2025, setelah istikharah dan
-                          mendapat restu keluarga, Wahyu melamar Riski dalam
-                          acara sederhana namun penuh makna. Dengan niat tulus,
-                          mereka melangkah menuju pernikahan, yakin bahwa Allah
-                          telah merajut kisah mereka dengan indah.
+                        <p class="quote">
+                          “Có lẽ tớ đã ‘xem’ đủ lâu rồi. Tớ không muốn cậu là
+                          bạn nữa.”
+                        </p>
+
+                        <p>Hoài bật cười, đôi mắt ươn ướt:</p>
+                        <p class="quote">“Tớ cũng vậy.”</p>
+
+                        <p>
+                          Tình yêu của họ bắt đầu muộn hơn người khác, nhưng lại
+                          chín chắn và bình yên. Không còn những bối rối tuổi
+                          trẻ, họ hiểu nhau đủ để biết cách ở bên nhau lâu dài.
+                        </p>
+
+                        <p>
+                          Vài năm sau, trong một đám cưới nhỏ ấm cúng, Tuấn nắm
+                          tay Hoài bước vào lễ đường. Những người bạn đại học năm
+                          nào nhìn họ, ai cũng mỉm cười – vì cuối cùng, câu
+                          chuyện còn dang dở thời sinh viên đã có một cái kết
+                          trọn vẹn.
+                        </p>
+
+                        <p>Và Tuấn thì thầm với Hoài:</p>
+                        <p class="quote">
+                          “May mà ngày đó tớ không trả lời ngay… để hôm nay có
+                          thể chắc chắn rằng, cậu chính là lựa chọn đúng nhất
+                          của cuộc đời tớ.”
                         </p>
                       </div>
                     </div>
@@ -396,7 +409,8 @@
                 </div>
               </div>
             </div>
-          </section> -->
+          </div>
+        </section>
 
         <!-- Wave Separator -->
         <div class="svg-wrapper">
@@ -483,28 +497,28 @@
             <div class="overflow-hidden">
               <div class="py-1" data-aos="fade-down" data-aos-duration="1500">
                 <h2 class="font-esthetic m-0 py-2" style="font-size: 2rem">
-                  10:30
+                  08:30
                 </h2>
                 <p style="font-size: 0.95rem">- Đón Khách Và Chụp Ảnh</p>
               </div>
               <div>|</div>
               <div class="py-1" data-aos="fade-left" data-aos-duration="1500">
                 <h2 class="font-esthetic m-0 py-2" style="font-size: 2rem">
-                  11:15
-                </h2>
-                <p style="font-size: 0.95rem">- Lễ Thành Hôn</p>
-              </div>
-              <div>|</div>
-              <div class="py-1" data-aos="fade-right" data-aos-duration="1500">
-                <h2 class="font-esthetic m-0 py-2" style="font-size: 2rem">
-                  11:30
+                  09:00
                 </h2>
                 <p style="font-size: 0.95rem">- Khai Tiệc Và Giao Lưu</p>
               </div>
               <div>|</div>
+              <div class="py-1" data-aos="fade-right" data-aos-duration="1500">
+                <h2 class="font-esthetic m-0 py-2" style="font-size: 2rem">
+                  10:30
+                </h2>
+                <p style="font-size: 0.95rem">-Lễ Thành Hôn</p>
+              </div>
+              <div>|</div>
               <div class="py-1" data-aos="fade-up" data-aos-duration="1500">
                 <h2 class="font-esthetic m-0 py-2" style="font-size: 2rem">
-                  13:00
+                  11:30
                 </h2>
                 <p style="font-size: 0.95rem">- Tung Hoa</p>
               </div>

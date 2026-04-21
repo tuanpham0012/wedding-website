@@ -28,9 +28,9 @@
         style="z-index: 10000"
       >
         <h2 class="font-esthetic mb-4" style="font-size: 2rem">
-          Quốc Tuấn &amp; Thu Hoài
+          Quốc Tuấn&nbsp;&nbsp; &amp; &nbsp;&nbsp;Thu Hoài
         </h2>
-        <p class="m-0" style="font-size: 1rem">Thứ Bảy, 02 Thắng 05 năm 2026</p>
+        <p class="m-0" style="font-size: 1rem">Chủ Nhật, 03 Thắng 05 năm 2026</p>
       </div>
     </div>
   </div>

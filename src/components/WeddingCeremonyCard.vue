@@ -11,7 +11,7 @@
 
         <p class="ceremony-time pb-3">VÀO LÚC 9:30 - THỨ 7</p>
         <p class="ceremony-date">03 | 05 | 2026</p>
-        <p class="ceremony-lunar pb-3">(Tức Ngày 24 Tháng 02 Năm Bính Ngọ)</p>
+        <p class="ceremony-lunar pb-3">(Tức Ngày 17 Tháng 03 Năm Bính Ngọ)</p>
 
         <p class="ceremony-label">TẠI</p>
         <p class="ceremony-venue">Tư gia nhà trai</p>
