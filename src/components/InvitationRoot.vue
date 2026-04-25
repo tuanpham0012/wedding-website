@@ -627,7 +627,7 @@
               data-aos-duration="2500"
             >
               <i class="fa-solid fa-money-bill-transfer"></i>
-              <p class="d-inline">Chuyển khoản</p>
+              <p class="d-inline">Mừng cưới</p>
 
               <div
                 class="d-flex justify-content-between align-items-center mt-2"
