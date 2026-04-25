@@ -13,5 +13,6 @@ COPY --from=build-stage /app/dist /usr/share/nginx/html
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 COPY /assets/music /usr/share/nginx/html/assets/music
 COPY /assets/video /usr/share/nginx/html/assets/video
+COPY /assets/images /usr/share/nginx/html/assets/images
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
