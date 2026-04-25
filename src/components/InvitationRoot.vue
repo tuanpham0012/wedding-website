@@ -183,7 +183,7 @@
 
               <div data-aos="fade-left" data-aos-duration="2000" class="pb-1">
                 <img
-                  src="/assets/images/hoai-tuan/BTT_2209.webp"
+                  src="/assets/images/hoai-tuan/BTT_2286.webp"
                   alt="cewe"
                   onclick="undangan.guest.modal(this)"
                   class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer"
