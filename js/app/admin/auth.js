@@ -3,7 +3,7 @@ import { bs } from '../../libs/bootstrap.js';
 // import { dto } from '../../connection/dto.js';
 import { storage } from '../../common/storage.js';
 import { session } from '../../common/session.js';
-import { pool, cacheRequest, request, HTTP_GET, HTTP_STATUS_OK } from '../../connection/request.js';
+import { pool, cacheRequest, request, HTTP_GET, HTTP_STATUS_OK, isApiEnabled } from '../../connection/request.js';
 
 export const auth = (() => {
 
@@ -54,6 +54,25 @@ export const auth = (() => {
      * @returns {Promise<object>}
      */
     const getDetailUser = () => {
+        if (!isApiEnabled()) {
+            return Promise.resolve({
+                code: 503,
+                data: {
+                    name: '',
+                    email: '',
+                    access_key: '',
+                    tz: '',
+                    is_filter: false,
+                    is_confetti_animation: false,
+                    can_reply: false,
+                    can_edit: false,
+                    can_delete: false,
+                    tenor_key: null,
+                },
+                error: ['API disabled'],
+            });
+        }
+
         return request(HTTP_GET, '/api/user').token(session.getToken()).send().then((res) => {
             if (res.code !== HTTP_STATUS_OK) {
                 throw new Error('failed to get user.');

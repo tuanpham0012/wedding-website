@@ -1,9 +1,8 @@
-import { progress } from './progress.js';
-import { util } from '../../common/util.js';
-import { cache } from '../../connection/cache.js';
+import { progress } from "./progress.js";
+import { util } from "../../common/util.js";
+import { cache } from "../../connection/cache.js";
 
 export const audio = (() => {
-
     const statePlay = '<i class="fa-solid fa-circle-pause spin-button"></i>';
     const statePause = '<i class="fa-solid fa-circle-play"></i>';
 
@@ -12,10 +11,18 @@ export const audio = (() => {
      * @returns {Promise<void>}
      */
     const load = async (playOnOpen = true) => {
-
-        const url = document.body.getAttribute('data-audio');
+        const url = document.body.getAttribute("data-audio");
+        // url = async () => {
+        //     const fs = require('fs').promises;
+        //     try {
+        //         await fs.access(url);
+        //         return url;
+        //     } catch {
+        //         return url.replace("/assets/music/", "/");
+        //     }
+        // }
         if (!url) {
-            progress.complete('audio', true);
+            progress.complete("audio", true);
             return;
         }
 
@@ -25,20 +32,20 @@ export const audio = (() => {
         let audioEl = null;
 
         try {
-            audioEl = new Audio(await cache('audio').withForceCache().get(url, progress.getAbort()));
+            audioEl = new Audio(await cache("audio").withForceCache().get(url, progress.getAbort()));
             audioEl.loop = true;
             audioEl.muted = false;
             audioEl.autoplay = false;
             audioEl.controls = false;
 
-            progress.complete('audio');
+            progress.complete("audio");
         } catch {
-            progress.invalid('audio');
+            progress.invalid("audio");
             return;
         }
 
         let isPlay = false;
-        const music = document.getElementById('button-music');
+        const music = document.getElementById("button-music");
 
         /**
          * @returns {Promise<void>}
@@ -56,6 +63,13 @@ export const audio = (() => {
                 music.innerHTML = statePlay;
             } catch (err) {
                 isPlay = false;
+                music.disabled = false;
+
+                if (err?.name === "NotSupportedError" || String(err?.message ?? "").includes("supported sources")) {
+                    console.warn("Audio playback is unavailable:", err);
+                    return;
+                }
+
                 util.notify(err).error();
             }
         };
@@ -69,16 +83,16 @@ export const audio = (() => {
             music.innerHTML = statePause;
         };
 
-        document.addEventListener('undangan.open', () => {
-            music.classList.remove('d-none');
+        document.addEventListener("undangan.open", () => {
+            music.classList.remove("d-none");
 
             if (playOnOpen) {
                 play();
             }
         });
 
-        music.addEventListener('offline', pause);
-        music.addEventListener('click', () => isPlay ? pause() : play());
+        music.addEventListener("offline", pause);
+        music.addEventListener("click", () => (isPlay ? pause() : play()));
     };
 
     /**

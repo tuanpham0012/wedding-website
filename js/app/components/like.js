@@ -2,7 +2,7 @@ import { dto } from '../../connection/dto.js';
 import { storage } from '../../common/storage.js';
 import { session } from '../../common/session.js';
 import { tapTapAnimation } from '../../libs/confetti.js';
-import { request, HTTP_PATCH, HTTP_POST, HTTP_STATUS_CREATED } from '../../connection/request.js';
+import { request, HTTP_PATCH, HTTP_POST, HTTP_STATUS_CREATED, isApiEnabled } from '../../connection/request.js';
 
 export const like = (() => {
 
@@ -21,6 +21,9 @@ export const like = (() => {
      * @returns {Promise<void>}
      */
     const love = async (button) => {
+        if (!isApiEnabled()) {
+            return;
+        }
 
         const info = button.firstElementChild;
         const heart = button.lastElementChild;
@@ -86,6 +89,10 @@ export const like = (() => {
      * @returns {Promise<void>}
      */
     const tapTap = async (div) => {
+        if (!isApiEnabled()) {
+            return;
+        }
+
         if (!navigator.onLine) {
             return;
         }

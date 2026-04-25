@@ -7,7 +7,7 @@ import { dto } from '../../connection/dto.js';
 import { lang } from '../../common/language.js';
 import { storage } from '../../common/storage.js';
 import { session } from '../../common/session.js';
-import { request, HTTP_GET, HTTP_POST, HTTP_DELETE, HTTP_PUT, HTTP_STATUS_CREATED } from '../../connection/request.js';
+import { request, HTTP_GET, HTTP_POST, HTTP_DELETE, HTTP_PUT, HTTP_STATUS_CREATED, isApiEnabled } from '../../connection/request.js';
 
 export const comment = (() => {
 
@@ -110,6 +110,10 @@ export const comment = (() => {
      * @returns {Promise<void>}
      */
     const fetchTracker = async (c) => {
+        if (!isApiEnabled()) {
+            return;
+        }
+
         if (c.comments) {
             await Promise.all(c.comments.map((v) => fetchTracker(v)));
         }
@@ -193,6 +197,14 @@ export const comment = (() => {
      * @returns {Promise<ReturnType<typeof dto.getCommentsResponse>>}
      */
     const show = () => {
+        if (!isApiEnabled()) {
+            comments.innerHTML = onNullComment();
+            return Promise.resolve({
+                code: 503,
+                data: { count: 0, lists: [] },
+                error: ['API disabled'],
+            });
+        }
 
         // remove all event listener.
         lastRender.forEach((u) => {
@@ -256,6 +268,10 @@ export const comment = (() => {
      * @returns {Promise<void>}
      */
     const remove = async (button) => {
+        if (!isApiEnabled()) {
+            return;
+        }
+
         if (!util.ask('Are you sure?')) {
             return;
         }
@@ -305,6 +321,10 @@ export const comment = (() => {
      * @returns {Promise<void>}
      */
     const update = async (button) => {
+        if (!isApiEnabled()) {
+            return;
+        }
+
         const id = button.getAttribute('data-uuid');
 
         let isPresent = false;
@@ -420,6 +440,10 @@ export const comment = (() => {
      * @returns {Promise<void>}
      */
     const send = async (button) => {
+        if (!isApiEnabled()) {
+            return;
+        }
+
         const id = button.getAttribute('data-uuid');
 
         const name = document.getElementById('form-name');
@@ -672,6 +696,10 @@ export const comment = (() => {
         pagination.init();
 
         comments = document.getElementById('comments');
+        if (!comments) {
+            return;
+        }
+
         comments.addEventListener('undangan.comment.show', show);
 
         owns = storage('owns');

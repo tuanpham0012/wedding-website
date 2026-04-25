@@ -12,18 +12,23 @@ html {
 }
 
 .font-esthetic {
-    font-family: 'Sacramento', cursive !important;
+    font-family: 'Great Vibes', cursive !important;
+    /* font-family: 'Sacramento', cursive !important; */
 }
 
 .font-arabic {
     font-family: 'Noto Naskh Arabic', serif !important;
 }
 
+.font-playwrite {
+  font-family: 'Great Vibes', cursive !important;
+}
+
 .img-center-crop {
-    width: 18rem;
-    height: 18rem;
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 18rem;
+    max-height: 18rem;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -167,13 +172,13 @@ svg {
 
 .invite-to {
     margin: 0 0 1.05rem 0;
-    font-size: 1.15rem;
+    font-size: 1rem;
     color: #222;
 }
 
 .invite-name {
     margin: 0;
-    font-size: 1.28rem;
+    font-size: 1.35rem;
     text-decoration-line: underline;
     text-decoration-style: dotted;
     padding-bottom: 0.55rem;

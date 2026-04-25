@@ -19,11 +19,63 @@ export const defaultJSON = {
 
 export const cacheRequest = 'request';
 
+const isApiEnabled = () => String(document.body.getAttribute('data-api') ?? 'false').toLowerCase() === 'true';
+
+const isBlockedRequest = (input) => {
+    try {
+        const url = input instanceof URL ? input : new URL(String(input), window.location.origin);
+        return url.pathname.startsWith('/api/') || url.hostname === 'apip.cc' || url.hostname.endsWith('.apip.cc');
+    } catch {
+        return false;
+    }
+};
+
+const offlineResponse = () => new Response(JSON.stringify({
+    id: 'offline',
+    error: ['API disabled'],
+}), {
+    status: 503,
+    statusText: 'API disabled',
+    headers: new Headers({
+        'Content-Type': 'application/json',
+    }),
+});
+
+const ignoredBaseUrls = new Set([
+    'https://api.ulems.my.id/',
+    'https://api.ulems.my.id',
+]);
+
+const getBaseUrl = () => {
+    const raw = document.body.getAttribute('data-url')?.trim();
+
+    if (!raw || ignoredBaseUrls.has(raw)) {
+        return window.location.origin;
+    }
+
+    return raw;
+};
+
 export const pool = (() => {
     /**
      * @type {Map<string, Cache>|null}
      */
     let cachePool = null;
+
+    /**
+     * @returns {{ match: function(string|URL): Promise<Response|null>, delete: function(string|URL): Promise<boolean>, put: function(string|URL, Response): Promise<void> }}
+     */
+    const createMemoryCache = () => {
+        const store = new Map();
+
+        return {
+            match: async (input) => store.get(String(input))?.clone() ?? null,
+            delete: async (input) => store.delete(String(input)),
+            put: async (input, res) => {
+                store.set(String(input), res.clone());
+            },
+        };
+    };
 
     return {
         /**
@@ -44,6 +96,11 @@ export const pool = (() => {
         restart: async (name) => {
             cachePool.set(name, null);
             cachePool.delete(name);
+            if (!window.isSecureContext || !window.caches) {
+                cachePool.set(name, createMemoryCache());
+                return;
+            }
+
             await window.caches.delete(name);
             await window.caches.open(name).then((c) => cachePool.set(name, c));
         },
@@ -53,11 +110,18 @@ export const pool = (() => {
          * @returns {void}
          */
         init: (callback, lists = []) => {
-            if (!window.isSecureContext) {
+            if (!window.isSecureContext && !import.meta.env.DEV) {
                 throw new Error('this application required secure context');
             }
 
             cachePool = new Map();
+
+            if (!window.isSecureContext || !window.caches) {
+                lists.concat([cacheRequest]).forEach((v) => cachePool.set(v, createMemoryCache()));
+                callback();
+                return;
+            }
+
             Promise.all(lists.concat([cacheRequest]).map((v) => window.caches.open(v).then((c) => cachePool.set(v, c)))).then(() => callback());
         },
     };
@@ -182,6 +246,9 @@ export const request = (method, path) => {
          * @returns {Promise<Response>}
          */
         const abstractFetch = () => {
+            if (!isApiEnabled() && isBlockedRequest(input)) {
+                return Promise.resolve(offlineResponse());
+            }
 
             /**
              * @returns {Promise<Response>}
@@ -326,7 +393,7 @@ export const request = (method, path) => {
                 Object.keys(defaultJSON).forEach((k) => req.headers.delete(k));
             }
 
-            return baseFetch(new URL(path, document.body.getAttribute('data-url'))).then((res) => {
+            return baseFetch(new URL(path, getBaseUrl())).then((res) => {
                 if (downName && res.ok) {
                     return baseDownload(res).then((r) => ({
                         code: r.status,
@@ -471,4 +538,8 @@ export const request = (method, path) => {
             return this;
         },
     };
+};
+
+export {
+    isApiEnabled,
 };

@@ -1,7 +1,7 @@
 import { util } from './util.js';
 import { storage } from './storage.js';
 import { dto } from '../connection/dto.js';
-import { request, HTTP_POST, HTTP_GET, HTTP_STATUS_OK } from '../connection/request.js';
+import { request, HTTP_POST, HTTP_GET, HTTP_STATUS_OK, isApiEnabled } from '../connection/request.js';
 
 export const session = (() => {
 
@@ -26,6 +26,10 @@ export const session = (() => {
      * @returns {Promise<boolean>}
      */
     const login = (body) => {
+        if (!isApiEnabled()) {
+            return Promise.resolve(false);
+        }
+
         return request(HTTP_POST, '/api/session')
             .body(body)
             .send(dto.tokenResponse)
@@ -53,6 +57,14 @@ export const session = (() => {
      * @returns {Promise<object>}
      */
     const guest = (token) => {
+        if (!isApiEnabled()) {
+            return Promise.resolve({
+                code: 503,
+                data: null,
+                error: ['API disabled'],
+            });
+        }
+
         return request(HTTP_GET, '/api/v2/config')
             .withCache(1000 * 60 * 30)
             .withForceCache()
