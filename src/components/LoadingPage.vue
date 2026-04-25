@@ -39,7 +39,10 @@
         <div class="d-flex flex-column">
           <small class="text-secondary">from</small>
           <small class="text-theme-auto"
-            ><i class="fa-brands fa-github me-1"></i>dewanakl</small
+            >Quốc Tuấn</small
+          >
+          <small class="text-theme-auto"
+            >Vui lòng chờ giây lát</small
           >
         </div>
       </div>
