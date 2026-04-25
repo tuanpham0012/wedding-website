@@ -37,7 +37,7 @@ const props = defineProps({
 
 const params = new URLSearchParams(window.location.search)
 
-const name = params.get('name') ?? "Bạn và Gia Đình"
+const name = params.get('to') ?? "Bạn và Gia Đình"
 </script>
 <style lang="">
     
