@@ -24,10 +24,6 @@ import InvitationCard from './InvitationCard.vue';
           <h2 class="font-esthetic mb-4" style="font-size: 2.25rem">
             Quốc Tuấn &amp; Thu Hoài
           </h2>
-          <div
-            id="guest-name"
-            data-message="Kepada Yth Bapak/Ibu/Saudara/i"
-          ></div>
 
           <InvitationCard />
         </div>
