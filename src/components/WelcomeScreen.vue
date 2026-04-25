@@ -22,7 +22,7 @@ import InvitationCard from './InvitationCard.vue';
           />
 
           <h2 class="font-esthetic mb-4" style="font-size: 2.25rem">
-            Quốc Tuấn &amp; Thu Hoài
+            Quốc Tuấn&nbsp;&nbsp; &amp; &nbsp;&nbsp;Thu Hoài
           </h2>
 
           <InvitationCard />
